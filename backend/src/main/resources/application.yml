@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: dev
+  config:
+    additional-location: file:/path/to/credential.properties
