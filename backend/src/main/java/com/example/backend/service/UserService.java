@@ -26,6 +26,8 @@ public class UserService {
     private RoleService roleService;
 
     public User addNewUser(CreateUserDto createUserDto){
+
+
         User user = mapCreateUserDtoToUser(createUserDto);
 
         return userRepository.save(user);

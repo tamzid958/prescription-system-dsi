@@ -3,6 +3,17 @@ spring:
     url: jdbc:mysql://localhost:3306/prescription-system
     username: root
     password: root
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
   jpa:
     hibernate:
       ddl-auto: update
