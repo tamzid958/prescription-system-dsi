@@ -35,6 +35,7 @@ public class OtpService {
         Random r = new Random();
         String randomNumber = String.format("%04d", (Object) r.nextInt(1001));
         user.setVerificationCode(randomNumber);
+        userRepository.save(user);
         emailService.sendEmail(email,"Verification Code",user.getVerificationCode());
 
         return user.getId();
