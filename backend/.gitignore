@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/.env
-/.idea
+!**/.idea
 
 ### STS ###
 .apt_generated
@@ -16,7 +16,6 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.env
 .idea
 *.idea
 *.iws
