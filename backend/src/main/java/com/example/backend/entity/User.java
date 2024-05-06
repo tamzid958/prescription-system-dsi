@@ -44,6 +44,7 @@ public class User {
     private String signatureImagePath;
     private String Status; //here s have to be small
     private LocalDate joinedAt;
+    private String verificationCodeSendTime;
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Prescription> prescriptionsByDoctor;
