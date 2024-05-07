@@ -143,55 +143,55 @@
         </band>
     </pageHeader>
     <detail>
-        <band height="232" splitType="Stretch">
-            <componentElement>
-                <reportElement x="-1" y="0" width="556" height="58" uuid="7d97e2c2-fb35-4668-947e-f659e9e3e42f">
-                    <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-                    <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
-                    <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
-                    <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
-                </reportElement>
-                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-                    <datasetRun subDataset="complaintsAndFindingDataset" uuid="1dd5ed19-0548-4b55-bf43-482bd3d277d5">
-                        <dataSourceExpression><![CDATA[$P{complaintsAndFindingDataset}]]></dataSourceExpression>
-                    </datasetRun>
-                    <jr:column width="40" uuid="11b77963-2c75-4dad-abd7-03874b3e4e8b">
-                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
-                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-                            <staticText>
-                                <reportElement x="0" y="0" width="40" height="30" uuid="1a750e90-91ed-48ac-9784-90e58ff5f91a"/>
-                                <textElement textAlignment="Left"/>
-                                <text><![CDATA[Chief Complaints]]></text>
-                            </staticText>
-                        </jr:columnHeader>
-                        <jr:detailCell style="Table_TD" height="30">
-                            <textField>
-                                <reportElement x="0" y="0" width="40" height="30" uuid="20a3f765-717a-40df-9a8a-72495e2fb0a0"/>
-                                <textElement textAlignment="Left"/>
-                                <textFieldExpression><![CDATA[$F{chiefComplaints}]]></textFieldExpression>
-                            </textField>
-                        </jr:detailCell>
-                    </jr:column>
-                    <jr:column width="40" uuid="1da6d55e-ffcd-47da-ae30-c5293dc4fc2f">
-                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
-                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-                            <staticText>
-                                <reportElement x="0" y="0" width="40" height="30" uuid="7a9b930b-0fc9-4e03-879e-da5695fca5a2"/>
-                                <textElement textAlignment="Left"/>
-                                <text><![CDATA[Clinical Findings]]></text>
-                            </staticText>
-                        </jr:columnHeader>
-                        <jr:detailCell style="Table_TD" height="30">
-                            <textField>
-                                <reportElement x="0" y="0" width="40" height="30" uuid="260e3079-7667-4ca7-9854-e2ba28dcd5fa"/>
-                                <textElement textAlignment="Left"/>
-                                <textFieldExpression><![CDATA[$F{clinicalFindings}]]></textFieldExpression>
-                            </textField>
-                        </jr:detailCell>
-                    </jr:column>
-                </jr:table>
-            </componentElement>
-        </band>
+<!--        <band height="232" splitType="Stretch">-->
+<!--            <componentElement>-->
+<!--                <reportElement x="-1" y="0" width="556" height="58" uuid="7d97e2c2-fb35-4668-947e-f659e9e3e42f">-->
+<!--                    <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>-->
+<!--                    <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>-->
+<!--                    <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>-->
+<!--                    <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>-->
+<!--                </reportElement>-->
+<!--                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">-->
+<!--                    <datasetRun subDataset="complaintsAndFindingDataset" uuid="1dd5ed19-0548-4b55-bf43-482bd3d277d5">-->
+<!--                        <dataSourceExpression><![CDATA[$P{complaintsAndFindingDataset}]]></dataSourceExpression>-->
+<!--                    </datasetRun>-->
+<!--                    <jr:column width="40" uuid="11b77963-2c75-4dad-abd7-03874b3e4e8b">-->
+<!--                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>-->
+<!--                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">-->
+<!--                            <staticText>-->
+<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="1a750e90-91ed-48ac-9784-90e58ff5f91a"/>-->
+<!--                                <textElement textAlignment="Left"/>-->
+<!--                                <text><![CDATA[Chief Complaints]]></text>-->
+<!--                            </staticText>-->
+<!--                        </jr:columnHeader>-->
+<!--                        <jr:detailCell style="Table_TD" height="30">-->
+<!--                            <textField>-->
+<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="20a3f765-717a-40df-9a8a-72495e2fb0a0"/>-->
+<!--                                <textElement textAlignment="Left"/>-->
+<!--                                <textFieldExpression><![CDATA[$F{chiefComplaints}]]></textFieldExpression>-->
+<!--                            </textField>-->
+<!--                        </jr:detailCell>-->
+<!--                    </jr:column>-->
+<!--                    <jr:column width="40" uuid="1da6d55e-ffcd-47da-ae30-c5293dc4fc2f">-->
+<!--                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>-->
+<!--                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">-->
+<!--                            <staticText>-->
+<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="7a9b930b-0fc9-4e03-879e-da5695fca5a2"/>-->
+<!--                                <textElement textAlignment="Left"/>-->
+<!--                                <text><![CDATA[Clinical Findings]]></text>-->
+<!--                            </staticText>-->
+<!--                        </jr:columnHeader>-->
+<!--                        <jr:detailCell style="Table_TD" height="30">-->
+<!--                            <textField>-->
+<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="260e3079-7667-4ca7-9854-e2ba28dcd5fa"/>-->
+<!--                                <textElement textAlignment="Left"/>-->
+<!--                                <textFieldExpression><![CDATA[$F{clinicalFindings}]]></textFieldExpression>-->
+<!--                            </textField>-->
+<!--                        </jr:detailCell>-->
+<!--                    </jr:column>-->
+<!--                </jr:table>-->
+<!--            </componentElement>-->
+<!--        </band>-->
     </detail>
     <columnFooter>
         <band height="45" splitType="Stretch"/>
