@@ -36,6 +36,14 @@
         <field name="chiefComplaints" class="java.lang.String"/>
         <field name="clinicalFindings" class="java.lang.String"/>
     </subDataset>
+    <subDataset name="medicationDataset" uuid="0ab8c46c-ec47-4814-9bbe-ca2a1cacfb98">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="medicineName" class="java.lang.String"/>
+        <field name="dosage" class="java.lang.String"/>
+        <field name="durationInDays" class="java.lang.Integer"/>
+    </subDataset>
     <parameter name="doctorName" class="java.lang.String"/>
     <parameter name="clinicPhoneNumber" class="java.lang.String"/>
     <parameter name="clinicAddress" class="java.lang.String"/>
@@ -52,6 +60,7 @@
     <parameter name="patientBp" class="java.lang.String"/>
     <parameter name="createdAt" class="java.lang.String"/>
     <parameter name="complaintsAndFindingDataset" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <parameter name="medicationDataset" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
     <queryString>
         <![CDATA[]]>
     </queryString>
@@ -143,55 +152,72 @@
         </band>
     </pageHeader>
     <detail>
-<!--        <band height="232" splitType="Stretch">-->
-<!--            <componentElement>-->
-<!--                <reportElement x="-1" y="0" width="556" height="58" uuid="7d97e2c2-fb35-4668-947e-f659e9e3e42f">-->
-<!--                    <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>-->
-<!--                    <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>-->
-<!--                    <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>-->
-<!--                    <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>-->
-<!--                </reportElement>-->
-<!--                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">-->
-<!--                    <datasetRun subDataset="complaintsAndFindingDataset" uuid="1dd5ed19-0548-4b55-bf43-482bd3d277d5">-->
-<!--                        <dataSourceExpression><![CDATA[$P{complaintsAndFindingDataset}]]></dataSourceExpression>-->
-<!--                    </datasetRun>-->
-<!--                    <jr:column width="40" uuid="11b77963-2c75-4dad-abd7-03874b3e4e8b">-->
-<!--                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>-->
-<!--                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">-->
-<!--                            <staticText>-->
-<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="1a750e90-91ed-48ac-9784-90e58ff5f91a"/>-->
-<!--                                <textElement textAlignment="Left"/>-->
-<!--                                <text><![CDATA[Chief Complaints]]></text>-->
-<!--                            </staticText>-->
-<!--                        </jr:columnHeader>-->
-<!--                        <jr:detailCell style="Table_TD" height="30">-->
-<!--                            <textField>-->
-<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="20a3f765-717a-40df-9a8a-72495e2fb0a0"/>-->
-<!--                                <textElement textAlignment="Left"/>-->
-<!--                                <textFieldExpression><![CDATA[$F{chiefComplaints}]]></textFieldExpression>-->
-<!--                            </textField>-->
-<!--                        </jr:detailCell>-->
-<!--                    </jr:column>-->
-<!--                    <jr:column width="40" uuid="1da6d55e-ffcd-47da-ae30-c5293dc4fc2f">-->
-<!--                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>-->
-<!--                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">-->
-<!--                            <staticText>-->
-<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="7a9b930b-0fc9-4e03-879e-da5695fca5a2"/>-->
-<!--                                <textElement textAlignment="Left"/>-->
-<!--                                <text><![CDATA[Clinical Findings]]></text>-->
-<!--                            </staticText>-->
-<!--                        </jr:columnHeader>-->
-<!--                        <jr:detailCell style="Table_TD" height="30">-->
-<!--                            <textField>-->
-<!--                                <reportElement x="0" y="0" width="40" height="30" uuid="260e3079-7667-4ca7-9854-e2ba28dcd5fa"/>-->
-<!--                                <textElement textAlignment="Left"/>-->
-<!--                                <textFieldExpression><![CDATA[$F{clinicalFindings}]]></textFieldExpression>-->
-<!--                            </textField>-->
-<!--                        </jr:detailCell>-->
-<!--                    </jr:column>-->
-<!--                </jr:table>-->
-<!--            </componentElement>-->
-<!--        </band>-->
+        <band height="265" splitType="Stretch">
+            <componentElement>
+                <reportElement x="10" y="0" width="544" height="100" uuid="66554221-b43f-4532-ae34-8c6387b64855">
+                    <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+                    <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+                    <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+                    <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+                </reportElement>
+                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="medicationDataset" uuid="af0b8e45-2517-4f72-b2a5-29215af2f9f6">
+                        <dataSourceExpression><![CDATA[$P{medicationDataset}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:column width="180" uuid="7d70dc3c-27a5-4c49-a996-0e8b9efbb0f4">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="180" height="30" uuid="b63ece06-389e-4d08-9e8e-d46f1fb9165c"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                                <text><![CDATA[Medicine Name]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="180" height="30" uuid="84543343-50ed-4e96-a206-08b234285b45"/>
+                                <textElement textAlignment="Justified"/>
+                                <textFieldExpression><![CDATA[$F{medicineName}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="180" uuid="8503f269-3ebd-4bde-9264-ebcb64e904d4">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="180" height="30" uuid="4f29d12b-01c7-4872-9ec3-94cfc477df70"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                                <text><![CDATA[Dosage]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="180" height="30" uuid="f8a67605-dbb4-4c24-afc0-c887b5ae215c"/>
+                                <textElement textAlignment="Justified"/>
+                                <textFieldExpression><![CDATA[$F{dosage}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="180" uuid="0a602165-81c7-4131-950d-856ff764ae8f">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="180" height="30" uuid="40756ad3-d8e0-498b-a909-3fad048ee51c"/>
+                                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                                <text><![CDATA[Duration]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="180" height="30" uuid="70402364-beda-4b3f-b0d2-49392b69bae9"/>
+                                <textElement textAlignment="Justified"/>
+                                <textFieldExpression><![CDATA[$F{durationInDays} + " Days"]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                </jr:table>
+            </componentElement>
+        </band>
     </detail>
     <columnFooter>
         <band height="45" splitType="Stretch"/>
